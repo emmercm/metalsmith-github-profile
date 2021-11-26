@@ -1,0 +1,43 @@
+{
+  "name": "metalsmith-github-profile",
+  "version": "0.0.1",
+  "description": "A Metalsmith plugin to fetch GitHub profile information. ",
+  "keywords": [
+    "metalsmith",
+    "metalsmith-plugin",
+    "plugin"
+  ],
+  "homepage": "https://github.com/emmercm/metalsmith-github-profile#readme",
+  "bugs": {
+    "url": "https://github.com/emmercm/metalsmith-github-profile/issues"
+  },
+  "license": "GPL-3.0-or-later",
+  "author": "Christian Emmer",
+  "files": [
+    "lib/index.js"
+  ],
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmercm/metalsmith-github-profile.git"
+  },
+  "scripts": {
+    "lint": "eslint . --fix || true",
+    "test": "jest --verbose --coverage && eslint .",
+    "test:update": "jest --verbose --coverage --updateSnapshot",
+    "test:watch": "jest --verbose --watch",
+    "test:junit": "JEST_JUNIT_OUTPUT=reports/junit/results.xml jest --ci --runInBand --reporters=default --reporters=jest-junit"
+  },
+  "dependencies": {
+    "async": "^3.2.2",
+    "deepmerge": "^4.2.2"
+  },
+  "devDependencies": {
+    "assert-dir-equal": "^1.1.0",
+    "handlebars": "^4.7.7",
+    "jest": "^27.3.1",
+    "jest-junit": "^13.0.0",
+    "metalsmith": "^2.3.0",
+    "metalsmith-hbt-md": "^1.0.1"
+  }
+}
