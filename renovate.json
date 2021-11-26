@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "config:base",
+    "schedule:monthly"
+  ],
+  "timezone": "America/Detroit",
+  "vulnerabilityAlerts": {
+    "schedule": "at any time"
+  },
+  "assignees": ["@emmercm"],
+  "automerge": true,
+  "rangeStrategy": "bump",
+  "separateMajorMinor": false,
+  "separateMinorPatch": false,
+  "packageRules": [
+    {
+      "depTypeList": ["dependencies"],
+      "groupName": "Dependencies",
+      "bumpVersion": "patch"
+    },
+    {
+      "depTypeList": ["devDependencies"],
+      "groupName": "Dev Dependencies"
+    }
+  ],
+  "transitiveRemediation": true
+}
