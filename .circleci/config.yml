@@ -1,0 +1,66 @@
+version: 2.1
+
+executors:
+  node:
+    docker:
+      # Current LTS version
+      - image: circleci/node:lts
+
+jobs:
+  # https://circleci.com/blog/publishing-npm-packages-using-circleci-2-0/
+  test:
+    executor: node
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: Run tests
+          command: npm test
+      - run:
+          name: Codecov
+          command: bash <(curl -s https://codecov.io/bash)
+      - run:
+          name: Run JUnit tests
+          command: npm run test:junit
+      - store_test_results:
+          path: reports
+
+  # https://circleci.com/docs/2.0/deployment-integrations/#npm
+  publish:
+    executor: node
+    steps:
+      - checkout
+      - run:
+          name: Publish to npm
+          command: |
+            VER_LOCAL=$(jq --raw-output '.version' package.json)
+            VER_LOCAL_N=$(echo ${VER_LOCAL} | awk -F. '{ printf("%d%03d%03d%03d\n", $1,$2,$3,$4); }')
+            VER_REMOTE=$(npm view "$(jq --raw-output '.name' package.json)" version)
+            VER_REMOTE_N=$(echo ${VER_REMOTE} | awk -F. '{ printf("%d%03d%03d%03d\n", $1,$2,$3,$4); }')
+            if [[ "${VER_LOCAL_N}" -gt "${VER_REMOTE_N}" ]]; then
+              echo "Publishing ${VER_REMOTE} --> ${VER_LOCAL}"
+              echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+              npm publish
+            else
+              echo "Already published ${VER_REMOTE}"
+            fi
+
+workflows:
+  version: 2.1
+  test-publish:
+    jobs:
+      - test
+      - publish:
+          requires:
+            - test
+          filters:
+            branches:
+              only: main
