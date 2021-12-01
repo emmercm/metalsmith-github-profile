@@ -38,7 +38,7 @@
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.25.3",
     "handlebars": "4.7.7",
-    "jest": "27.3.1",
+    "jest": "27.4.2",
     "jest-junit": "13.0.0",
     "metalsmith": "2.3.0",
     "metalsmith-hbt-md": "1.0.1"
