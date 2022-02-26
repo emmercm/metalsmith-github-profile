@@ -26,7 +26,7 @@ const githubProfile = require('metalsmith-github-profile');
 
 Metalsmith(__dirname)
     .use(githubProfile({
-        "username": "your-username-here"
+        username: "<your-username-here>"
         // additional options
     }))
     .build((err) => {
@@ -38,7 +38,7 @@ Metalsmith(__dirname)
 
 ## Global metadata
 
-This plugin adds a metadata field named `github.profile` to the global metadata which can be used with templating engines, such as with [Handlebars](https://www.npmjs.com/package/handlebars):
+This plugin adds a metadata field named `github.profile` to the global metadata which can be used with templating engines, such as with [`handlebars`](https://www.npmjs.com/package/handlebars):
 
 ```handlebars
 GitHub username: {{ github.profile.user.login }}
@@ -46,7 +46,7 @@ GitHub username: {{ github.profile.user.login }}
 The rest of the page content.
 ```
 
-The following metadata is available:
+The following metadata is available from the GitHub public API:
 
 - [`github.profile.user`](https://docs.github.com/en/rest/reference/users#get-a-user) (`Object`)
 - [`github.profile.repos`](https://docs.github.com/en/rest/reference/repos#list-repositories-for-a-user) (`Object[]`)
