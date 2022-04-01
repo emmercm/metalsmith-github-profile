@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-github-profile",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Metalsmith plugin to fetch GitHub profile information. ",
   "keywords": [
     "metalsmith",
@@ -29,7 +29,7 @@
     "test:junit": "JEST_JUNIT_OUTPUT=reports/junit/results.xml jest --ci --runInBand --reporters=default --reporters=jest-junit"
   },
   "dependencies": {
-    "async": "^3.2.2",
+    "async": "^3.2.3",
     "deepmerge": "^4.2.2"
   },
   "devDependencies": {
