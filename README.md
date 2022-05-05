@@ -10,7 +10,7 @@
 [![GitHub](https://badgen.net/badge/emmercm/metalsmith-github-profile/purple?icon=github)](https://github.com/emmercm/metalsmith-github-profile)
 [![License](https://badgen.net/github/license/emmercm/metalsmith-github-profile?color=grey)](https://github.com/emmercm/metalsmith-github-profile/blob/main/LICENSE)
 
-A Metalsmith plugin to fetch GitHub profile information.
+A Metalsmith plugin to fetch GitHub profile information as global metadata.
 
 ## Installation
 
