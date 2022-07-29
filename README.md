@@ -59,6 +59,12 @@ Type: `string`
 
 The GitHub username to fetch information for.
 
+### `authorization` (optional)
+
+Type: `{username: string, token: string}`
+
+A GitHub username and OAuth token (including personal access tokens) to use for API requests to get around rate limits.
+
 ### `timeout` (optional)
 
 Type: `number` Default: `5000`
