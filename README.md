@@ -59,6 +59,24 @@ Type: `string`
 
 The GitHub username to fetch information for.
 
+### `authorization` (optional)
+
+Type: `{username: string, token: string}`
+
+A GitHub username and OAuth token (including personal access tokens) to use for API requests to get around rate limits.
+
+You can source the token from environment variables like this:
+
+```javascript
+githubProfile({
+  username: "emmercm",
+  authorization: {
+    username: "emmercm",
+    token: process.env.GITHUB_PERSONAL_ACCESS_TOKEN
+  }
+})
+```
+
 ### `timeout` (optional)
 
 Type: `number` Default: `5000`

@@ -1,5 +1,9 @@
 {
   "options": {
-    "username": "emmercm"
+    "username": "emmercm",
+    "authorization": {
+      "username": "emmercm",
+      "token": "a bad token"
+    }
   }
 }
