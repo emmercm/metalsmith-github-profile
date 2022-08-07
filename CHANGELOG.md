@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.0 / 2022-08-07
+
+- Fixed HTTP(S) timeouts preventing the plugin from stopping.
+
 ## v0.1.0 / 2022-07-28
 
 - Added the `authorization` option.
