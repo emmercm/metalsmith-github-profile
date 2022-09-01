@@ -34,12 +34,12 @@
   },
   "devDependencies": {
     "assert-dir-equal": "1.1.0",
-    "eslint": "8.21.0",
+    "eslint": "8.23.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.26.0",
     "handlebars": "4.7.7",
-    "jest": "28.1.3",
-    "jest-junit": "14.0.0",
+    "jest": "29.0.1",
+    "jest-junit": "14.0.1",
     "metalsmith": "2.5.0",
     "metalsmith-hbt-md": "1.0.1"
   }
