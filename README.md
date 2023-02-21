@@ -1,5 +1,7 @@
 # metalsmith-github-profile
 
+**⚠️ This repistory has been moved to [metalsmith-plugins](https://github.com/emmercm/metalsmith-plugins/tree/main/packages/metalsmith-github-profile). ⚠️**
+
 [![npm Version](https://badgen.net/npm/v/metalsmith-github-profile?icon=npm)](https://www.npmjs.com/package/metalsmith-github-profile)
 [![npm Weekly Downloads](https://badgen.net/npm/dw/metalsmith-github-profile)](https://www.npmjs.com/package/metalsmith-github-profile)
 
